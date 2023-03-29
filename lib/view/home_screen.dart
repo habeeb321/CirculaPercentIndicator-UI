@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:privo_assignment/core/constants.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -15,8 +16,8 @@ class HomeScreen extends StatelessWidget {
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    Color(0xff151A47),
-                    Color(0xff1D478D),
+                    kColor1,
+                    kColor2,
                   ],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
@@ -37,12 +38,12 @@ class HomeScreen extends StatelessWidget {
                         Icon(
                           Icons.sort,
                           size: 40,
-                          color: Colors.white,
+                          color: kWhiteColor,
                         ),
                         Icon(
                           Icons.notifications_none,
                           size: 40,
-                          color: Colors.white,
+                          color: kWhiteColor,
                         ),
                       ],
                     ),
@@ -54,13 +55,13 @@ class HomeScreen extends StatelessWidget {
                         Container(
                           height: 100,
                           width: size.width * 0.7,
-                          color: const Color(0xff16173F),
+                          color: kColor3,
                         ),
                         Positioned(
                           left: size.width * 0.59,
                           child: const CircleAvatar(
                             radius: 50,
-                            backgroundColor: Color(0xff16173F),
+                            backgroundColor: kColor3,
                           ),
                         ),
                         Positioned(
@@ -70,20 +71,63 @@ class HomeScreen extends StatelessWidget {
                             children: const [
                               Icon(
                                 Icons.verified,
-                                color: Colors.white,
+                                color: kWhiteColor,
                                 size: 30,
                               ),
                               SizedBox(width: 20),
                               Text(
                                 '0% processing fee',
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 25),
+                                style:
+                                    TextStyle(color: kWhiteColor, fontSize: 25),
                               )
                             ],
                           ),
                         ),
                       ],
                     ),
+                  ),
+                  kHeight40,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      const CircleAvatar(
+                        radius: 90,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text(
+                            'Total limit',
+                            style: TextStyle(color: kWhiteColor, fontSize: 20),
+                          ),
+                          Text(
+                            '₹ 2,00,000',
+                            style: TextStyle(
+                                color: kWhiteColor,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          kHeight20,
+                          Text(
+                            'Utilised limit',
+                            style: TextStyle(color: kWhiteColor, fontSize: 20),
+                          ),
+                          Text(
+                            '₹ 50,000',
+                            style: TextStyle(color: kWhiteColor, fontSize: 20),
+                          ),
+                          kHeight20,
+                          Text(
+                            'Available limit',
+                            style: TextStyle(color: kWhiteColor, fontSize: 20),
+                          ),
+                          Text(
+                            '₹ 1,50,000',
+                            style: TextStyle(color: kWhiteColor, fontSize: 20),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ],
               ),
