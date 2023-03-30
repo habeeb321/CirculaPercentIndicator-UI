@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:privo_assignment/core/constants.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 
 class TopWidget extends StatelessWidget {
   const TopWidget({
@@ -85,12 +86,26 @@ class TopWidget extends StatelessWidget {
               ],
             ),
           ),
-          kHeight40,
+          kHeight20,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              const CircleAvatar(
-                radius: 90,
+              CircularPercentIndicator(
+                backgroundColor: kWhiteColor,
+                radius: 95,
+                backgroundWidth: 18,
+                lineWidth: 13.0,
+                animation: true,
+                percent: 0.25,
+                center: const Text(
+                  "25 % utilised",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20.0,
+                      color: kWhiteColor),
+                ),
+                circularStrokeCap: CircularStrokeCap.round,
+                progressColor: const Color(0xff45B455),
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
