@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:privo_assignment/core/constants.dart';
+import 'package:privo_assignment/view/widgets/bottom_widget.dart';
+import 'package:privo_assignment/view/widgets/top_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -10,128 +11,10 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              height: size.height * 0.6,
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    kColor1,
-                    kColor2,
-                  ],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  stops: [0.0, 1.0],
-                ),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 15,
-                      vertical: 15,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        Icon(
-                          Icons.sort,
-                          size: 40,
-                          color: kWhiteColor,
-                        ),
-                        Icon(
-                          Icons.notifications_none,
-                          size: 40,
-                          color: kWhiteColor,
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    width: size.width,
-                    child: Stack(
-                      children: [
-                        Container(
-                          height: 100,
-                          width: size.width * 0.7,
-                          color: kColor3,
-                        ),
-                        Positioned(
-                          left: size.width * 0.59,
-                          child: const CircleAvatar(
-                            radius: 50,
-                            backgroundColor: kColor3,
-                          ),
-                        ),
-                        Positioned(
-                          top: size.height * 0.035,
-                          left: size.height * 0.025,
-                          child: Row(
-                            children: const [
-                              Icon(
-                                Icons.verified,
-                                color: kWhiteColor,
-                                size: 30,
-                              ),
-                              SizedBox(width: 20),
-                              Text(
-                                '0% processing fee',
-                                style:
-                                    TextStyle(color: kWhiteColor, fontSize: 25),
-                              )
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  kHeight40,
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      const CircleAvatar(
-                        radius: 90,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text(
-                            'Total limit',
-                            style: TextStyle(color: kWhiteColor, fontSize: 20),
-                          ),
-                          Text(
-                            '₹ 2,00,000',
-                            style: TextStyle(
-                                color: kWhiteColor,
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          kHeight20,
-                          Text(
-                            'Utilised limit',
-                            style: TextStyle(color: kWhiteColor, fontSize: 20),
-                          ),
-                          Text(
-                            '₹ 50,000',
-                            style: TextStyle(color: kWhiteColor, fontSize: 20),
-                          ),
-                          kHeight20,
-                          Text(
-                            'Available limit',
-                            style: TextStyle(color: kWhiteColor, fontSize: 20),
-                          ),
-                          Text(
-                            '₹ 1,50,000',
-                            style: TextStyle(color: kWhiteColor, fontSize: 20),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
+            TopWidget(size: size),
+            BottomWidget(size: size),
           ],
         ),
       ),
