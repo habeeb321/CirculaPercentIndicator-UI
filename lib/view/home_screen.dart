@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:privo_assignment/view/widgets/bottom_widget.dart';
 import 'package:privo_assignment/view/widgets/top_widget.dart';
+import 'package:privo_assignment/view/widgets/bottom_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
